@@ -81,6 +81,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.kotlin.serialization)
+
     implementation(libs.opencsv)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.material.icons.extended)
