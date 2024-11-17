@@ -1,13 +1,11 @@
 package com.bendeng.stockmarketpraticeapp.data.remote.dto
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.squareup.moshi.Json
 
-@Serializable
 data class CompanyInfoDto(
-    @SerialName("Symbol") val symbol: String?,
-    @SerialName("Description") val description: String?,
-    @SerialName("Name") val name: String?,
-    @SerialName("Country") val country: String?,
-    @SerialName("Industry") val industry: String?,
+    @field:Json(name = "Symbol") val symbol: String?,
+    @field:Json(name = "Description") val description: String?,
+    @field:Json(name = "Name") val name: String?,
+    @field:Json(name = "Country") val country: String?,
+    @field:Json(name = "Industry") val industry: String?,
 )
