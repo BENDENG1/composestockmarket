@@ -86,8 +86,8 @@ fun CompanyInfoScreen(
                 )
                 if (state.stockInfos.isNotEmpty()) {
                     Spacer(modifier = Modifier.height(16.dp))
-                    Text(text = "시장 요약")
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(text = "가격 차트")
+                    Spacer(modifier = Modifier.height(32.dp))
                     StockChart(
                         infos = state.stockInfos,
                         modifier = Modifier
@@ -104,7 +104,7 @@ fun CompanyInfoScreen(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        if(state.isLoading){
+        if (state.isLoading) {
             CircularProgressIndicator()
         } else if (state.errorMessage != null) {
             Text(

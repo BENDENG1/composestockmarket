@@ -29,7 +29,18 @@ class IntraDayInfoParser @Inject constructor() : CSVParser<IntraDayInfo> {
                     dto.toIntraDayInfo()
                 }
                 .filter {
-                    it.date.dayOfMonth == LocalDateTime.now().minusDays(1).dayOfMonth
+                    //일요일,월요일 테스트
+                    val now = LocalDateTime.now()
+                    val dayOfWeek = now.dayOfWeek.value
+
+                    val targetDate = now.minusDays(4)
+                    when (dayOfWeek) {
+                        6 -> now.minusDays(1)
+                        7 -> now.minusDays(2)
+                        else -> now
+                    }
+
+                    it.date.dayOfMonth == targetDate.dayOfMonth
                 }
                 .sortedBy {
                     it.date.hour
