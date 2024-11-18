@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.serialization)
     id("kotlin-kapt")
     id("kotlin-parcelize")
 }
@@ -13,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.bendeng.stockmarketpraticeapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -80,6 +81,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.kotlin.serialization)
 
     implementation(libs.opencsv)
     implementation(libs.lifecycle.viewmodel.compose)
